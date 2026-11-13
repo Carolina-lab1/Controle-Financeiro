@@ -31,8 +31,6 @@ def init_db(db_name='financas.db'):
             ("Moradia", "despesa"),
             ("Lazer", "despesa")
         ])
-
-    # O commit e o close DEVEM estar fora do if, para executarem sempre!
     conn.commit()
     conn.close()
 
@@ -46,7 +44,6 @@ def get_all_transacoes(db_name='financas.db'):
         join categorias c on t.categoria_id = c.id
         order by t.data desc
     """)
-
     rows = cursor.fetchall()
     conn.close()
     return rows
@@ -58,7 +55,6 @@ def add_transacoes(descricao, valor, data, categoria_id, db_name='financas.db'):
         insert into transacoes (descricao, valor, data, categoria_id)
         values (?,?,?,?)
     """, (descricao, valor, data, categoria_id))
-
     conn.commit()
     conn.close()
 
@@ -70,3 +66,10 @@ def get_categorias(db_name='financas.db'):
     rows = cursor.fetchall()
     conn.close()
     return rows
+
+def limpar_transacoes(db_name='financas.db'):
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
+    cursor.execute('DELETE FROM transacoes')
+    conn.commit()
+    conn.close()
