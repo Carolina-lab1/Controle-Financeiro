@@ -1,7 +1,8 @@
 import unittest
 import os
-import models
+import sys
 from app import app
+import models
 
 class TestControleFinanceiro(unittest.TestCase):
 
