@@ -30,6 +30,11 @@ def add():
 
     return redirect(url_for("index"))
 
+@app.route('/clear', methods=['POST'])
+def clear():
+    models.limpar_transacoes()
+    return redirect('/')
+
 if __name__ == "__main__":
     app.run(debug=True)
 
