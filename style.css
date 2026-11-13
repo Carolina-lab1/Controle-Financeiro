@@ -1,0 +1,228 @@
+:root {
+    --bg-body: #f4f7f6;
+    --bg-container: #ffffff;
+    --bg-input: #ffffff;
+    --border-color: #e1e8ed;
+    
+    --text-primary: #2c3e50;
+    --text-secondary: #7f8c8d;
+    --text-on-accent: #ffffff;
+    
+    --color-accent: #e22828;
+    --color-accent-hover: #ce0812a2;
+    
+    --color-income: #27ae60;
+    --color-expense: #e74c3c; 
+    
+    --shadow-card: 0 4px 15px rgba(0,0,0,0.05);
+    
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.dark-theme {
+    --bg-body: #121212;
+    --bg-container: #1e1e1e;
+    --bg-input: #2d2d2d;
+    --border-color: #333333;
+    
+    --text-primary: #e0e0e0;
+    --text-secondary: #aaaaaa;
+    --text-on-accent: #ffffff;
+    
+    --color-accent: #bb86fc;
+    --color-accent-hover: #d1b3ff;
+    
+    --color-expense: #e57373;
+    
+    --shadow-card: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transição suave na troca de tema */
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--bg-container);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--border-color);
+}
+
+.header-app {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+h1 {
+    font-size: 1.7rem;
+    color: var(--color-accent);
+    text-shadow: -1px 0px 4px #7f8c8d78;;
+}
+
+.theme-toggle-btn {
+    background: none;
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.theme-toggle-btn:hover {
+    background-color: var(--color-accent);
+    color: var(--text-on-accent);
+}
+
+.card-saldo {
+    background-color: var(--color-accent);
+    color: var(--text-on-accent);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card-saldo h2 { 
+    font-size: 1.1rem; 
+    opacity: 0.9; 
+    font-weight: 600 bold; 
+    text-transform: uppercase;
+}
+
+.card-saldo .valor { 
+    font-size: 2.4rem; 
+    font-weight: 700; 
+    margin-top: 7px; 
+}
+
+.form-section { 
+    margin-bottom: 30px; 
+}
+
+.form-section h3 { 
+    margin-bottom: 15px; 
+    color: var(--text-secondary); 
+    font-size: 1.1rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+
+.minimal-form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 12px; 
+}
+
+.form-row { 
+    display: flex; 
+    gap: 12px; 
+}
+
+input, select {
+    flex: 1;
+    padding: 12px;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+input:focus, select:focus { 
+    outline: none; 
+    border-color: var(--color-accent); 
+    box-shadow: 0 0 0 2px rgba(250, 122, 122, 0.15); 
+}
+
+body.dark-theme input[type="date"]::-webkit-calendar-picker-indicator { 
+    filter: invert(1); 
+}
+
+button[type="submit"] {
+    background-color: var(--color-accent);
+    color: var(--text-on-accent);
+    border: none;
+    padding: 14px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover { 
+    background-color: var(--color-accent-hover); 
+}
+
+.history-section h3 {
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.table-responsive { 
+    overflow-x: auto; 
+} table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 5px; 
+    font-size: 0.95rem; 
+} th, td { 
+    padding: 14px; 
+    text-align: left; 
+    border-bottom: 1px solid var(--border-color); 
+} th { 
+    background-color: rgba(0,0,0,0.02); 
+    color: var(--text-secondary); 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    font-size: 0.8rem; 
+    letter-spacing: 0.5px; 
+}
+
+body.dark-theme th { 
+    background-color: rgba(255,255,255,0.02); 
+}
+
+tr.receita td.col-valor { 
+    color: var(--color-income); font-weight: 600; 
+}
+
+tr.despesa td.col-valor { 
+    color: var(--color-expense); font-weight: 600; 
+}
+
+.empty-state { 
+    text-align: center; 
+    color: var(--text-secondary); 
+    padding: 30px; 
+    font-style: italic; 
+}
