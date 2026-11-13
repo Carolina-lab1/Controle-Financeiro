@@ -71,6 +71,15 @@
                         {% endfor %}
                     </tbody>
                 </table>
+                {% if transacoes %}
+            <div class="clear-container">
+                <form action="/clear" method="POST" onsubmit="return confirm('Tem certeza que deseja apagar todo o histórico de transações?');">
+                    <button type="submit" class="btn-danger">
+                        Limpar Histórico
+                    </button>
+                </form>
+            </div>
+            {% endif %}
             </div>
         </section>
     </div>
