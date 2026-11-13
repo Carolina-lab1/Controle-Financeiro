@@ -226,3 +226,25 @@ tr.despesa td.col-valor {
     padding: 30px; 
     font-style: italic; 
 }
+
+.clear-container {
+    margin-top: 20px;
+    width: 100%; 
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 12px 20px; 
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%; 
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+}
